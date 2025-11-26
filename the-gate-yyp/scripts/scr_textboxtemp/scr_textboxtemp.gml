@@ -27,8 +27,17 @@ function textboxtempidis(text_id){
 			tenginetemp("but the test cube refused.");
 		break;
 		case "udef":
-			tenginetemp("traci used an item on the test cube.");
-			tenginetemp("whatever it was, the test cube liked it.");
+			if global.inhand==""{
+				tenginetemp("Traci isn't holding an item.");
+			} else if global.inhand=="Tmater"{
+				global.inhand="";
+				array_remove(global.plr_strg,"Tmater");
+				tenginetemp("Traci used Tmater on the test cube.");
+				tenginetemp("Tmater was thrown onto the test cubes face.");
+			}
+			else{
+				tenginetemp("Traci can't use that here.");
+			}
 		break;
 		case "othergy":
 			tenginetemp("Hi I'm other guy.");
