@@ -21,3 +21,5 @@ if walk_setup{
 		speed=0;
 	}
 }
+
+depth=y*-1;

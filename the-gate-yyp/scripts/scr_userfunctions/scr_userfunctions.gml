@@ -8,6 +8,7 @@ function array_remove(array,item){
 	for(var i = 0; i<array_length(array); i++){
 		if array[i]==item{
 			array_delete(array,i,1);
+			break;
 		}
 	}
 }

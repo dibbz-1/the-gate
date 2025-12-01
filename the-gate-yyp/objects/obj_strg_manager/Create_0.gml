@@ -1,5 +1,7 @@
 strg_label = global.plr_strg;
 
+global.inhand="";
+
 for(var i=0; i<array_length(strg_label); i++){
 	var _obj=noone;
 	var _label=strg_label[i];
