@@ -35,8 +35,8 @@ function text_id_is(_id){
 			else text_engine("*Traci is not holding anything in his hand.*");
 		break;
 		
-		case "tmater":
-			text_engine("*Traci took the Tmater*");
+		case "tkedef":
+			text_engine(string("*Traci took the {0}*",global.intfocusid));
 		break;
 		
 		case "tracinoitems":

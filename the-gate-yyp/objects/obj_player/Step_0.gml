@@ -3,7 +3,7 @@ var goto_trig = mouse_check_button_pressed(mb_left);
 
 // if mouse left button clicked, set walk setup to true and set variables to mouse coords
 if goto_trig{
-	if !walk_setup && !instance_exists(obj_textbox) && !place_meeting(mouse_x,mouse_y,obj_col){
+	if !walk_setup && !instance_exists(obj_textbox) && !position_meeting(mouse_x,mouse_y,obj_col) && obj_game_manager.plrstate==0{
 		walk_setup=1;
 		point_direction(x,y,mouse_x,mouse_y)
 		goto_x=round(mouse_x);
@@ -28,5 +28,3 @@ if (speed>0){
 else{
 	sprite_index=spr_traci_idle_d;
 }
-
-depth=y*-1;

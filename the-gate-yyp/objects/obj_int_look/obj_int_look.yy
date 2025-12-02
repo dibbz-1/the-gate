@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_int_stare",
+  "%Name":"obj_int_look",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_int_stare",
+  "name":"obj_int_look",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_int_stare",
-    "path":"sprites/spr_int_stare/spr_int_stare.yy",
+    "name":"spr_int_look",
+    "path":"sprites/spr_int_look/spr_int_look.yy",
   },
   "spriteMaskId":null,
   "visible":true,
