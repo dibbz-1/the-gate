@@ -23,6 +23,6 @@ for(var i=0; i<array_length(strg_label); i++){
 }
 
 if array_length(strg_label)==0{
-	scr_textboxtemp("tracinoitems");
+	create_text("tracinoitems");
 	instance_destroy();
 }

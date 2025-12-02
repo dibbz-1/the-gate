@@ -35,5 +35,5 @@
     "path":"sprites/spr_camgpx/spr_camgpx.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

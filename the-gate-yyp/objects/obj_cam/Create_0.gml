@@ -1,2 +1,2 @@
 transition=0;
-transpeed=5;
+transpeed=3;

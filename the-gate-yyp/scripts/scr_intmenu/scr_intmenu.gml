@@ -29,11 +29,17 @@ function draw_interact_menu(){
 				_event=use;
 			break;
 		}
-		if (_event!="null"){
-			_ops++;
-			with instance_create_depth(x+30,y+_ops*15,depth-1,_obj){
+		if (_event!="null"){	
+			var _x = 20;
+			
+			if (x<obj_player.x){
+				_x=-50;
+			}
+			
+			with instance_create_depth(x+_x,y+(_ops*15)-30,depth-1,_obj){
 				event=_event;
 			}
+			_ops++;
 		}
 	}
 }

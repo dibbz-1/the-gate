@@ -23,7 +23,7 @@
   ],
   "name":"spr_tblock_y",
   "nineSlice":null,
-  "origin":5,
+  "origin":4,
   "parent":{
     "name":"Sprites",
     "path":"folders/Sprites.yy",
@@ -75,7 +75,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":32,
+    "xorigin":16,
     "yorigin":16,
   },
   "swatchColours":null,

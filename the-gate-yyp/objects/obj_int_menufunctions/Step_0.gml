@@ -9,7 +9,7 @@ if position_meeting(mouse_x,mouse_y,id){
 	//if left mouse button is clicked
 	if select{
 		//create textbox with specified event text
-		scr_textboxtemp(event);
+		create_text(event);
 	}
 } else{
 	//if mouse is not hovering over instance, return to normal size.

@@ -3,7 +3,7 @@ var plrx = obj_player.x;
 var plry = obj_player.y;
 
 //if player is a certain distance from thge center of the screen, set transition to 1 (true)
-if abs(plrx-x)>=120 or abs(plry-y)>=80{
+if (abs(plrx-x)>=80 or abs(plry-y)>=40) and (obj_player.speed==0){
 	transition=1;
 }
 

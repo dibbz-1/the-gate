@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_textboxtemp",
+  "%Name":"scr_dialoguefunctions",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_textboxtemp",
+  "name":"scr_dialoguefunctions",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

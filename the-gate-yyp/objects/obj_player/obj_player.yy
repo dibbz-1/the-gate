@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_charplace",
-    "path":"sprites/spr_charplace/spr_charplace.yy",
+    "name":"spr_traci_walkD",
+    "path":"sprites/spr_traci_walkD/spr_traci_walkD.yy",
   },
   "spriteMaskId":null,
   "visible":true,
