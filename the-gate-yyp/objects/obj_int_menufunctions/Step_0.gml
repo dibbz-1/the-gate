@@ -9,7 +9,19 @@ if position_meeting(mouse_x,mouse_y,id){
 	//if left mouse button is clicked
 	if select{
 		//create textbox with specified event text
-		create_text(event);
+		if inst_id!=1 create_text(event);
+		// if player selected take, destroy the taken object. if player selected look, spawn the observation scene.
+		switch inst_id{
+			case 3:
+			instance_destroy(global.intfocus);
+			array_push(global.plr_strg,global.intfocusid);
+			break;
+		
+			case 1:
+			spawn_observation_scene(event);
+			break;
+		
+		}
 	}
 } else{
 	//if mouse is not hovering over instance, return to normal size.
@@ -17,11 +29,6 @@ if position_meeting(mouse_x,mouse_y,id){
 	image_yscale=1.5
 }
 if select{
-	//destroy all text, and if the player selected "take," destroy the instance that was interacted with.
+	//destroy all text
 	instance_destroy();
-	if inst_id==3{
-		instance_destroy(global.intfocus);
-		array_push(global.plr_strg,global.intfocusid);
-		
-	}
 }
