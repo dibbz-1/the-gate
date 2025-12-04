@@ -8,6 +8,9 @@ if plrstate!=1{
 	if position_meeting(mouse_x,mouse_y,obj_interactable){
 		cursor_spr = spr_mouse_int;
 	}
+	if position_meeting(mouse_x,mouse_y,obj_door){
+		cursor_spr = spr_mouse_door;
+	}
 }
 else{
 	if position_meeting(mouse_x,mouse_y,obj_look_interactable){

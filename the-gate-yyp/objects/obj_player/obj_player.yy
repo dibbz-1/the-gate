@@ -20,7 +20,7 @@
     "name":"obj_depthsorting",
     "path":"objects/obj_depthsorting/obj_depthsorting.yy",
   },
-  "persistent":false,
+  "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,
