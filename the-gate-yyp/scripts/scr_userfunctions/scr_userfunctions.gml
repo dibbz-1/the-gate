@@ -1,5 +1,4 @@
-/// @function                  array_remove(array, item)
-/// @description               Finds the index of an item and removes it from the array.
+/// @description               This function finds the index of an item within an array and removes it.
 
 /// @param        array        The array to remove the item from.
 /// @param        item         The item to remove.

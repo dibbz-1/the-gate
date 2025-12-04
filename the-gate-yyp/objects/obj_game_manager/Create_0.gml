@@ -15,3 +15,7 @@ plrstate=0;
 			0 -- normal- able to walk around and interact with objects.
 			1 -- looking- currently observing a scene.
 */
+
+grid = mp_grid_create(0,0,room_width/16,room_height/16,16,16);
+
+mp_grid_add_instances(grid,obj_col,false);

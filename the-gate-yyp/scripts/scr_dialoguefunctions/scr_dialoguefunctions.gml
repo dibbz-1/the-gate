@@ -20,23 +20,40 @@ function text_id_is(_id){
 			text_engine("tough crowd.");
 		break;
 		
+		// this generic dialogue event will be used for casual interactions between any item and any interactable. 
 		case "udef":
 			if global.inhand!=""{
-				switch global.inhand{
-					case "Tmater":
-						array_remove(global.plr_strg,"Tmater");
-						
-						text_engine("*Traci threw the Tmater at the test cube.*");
-					break;
-				}
+				if use_is_valid(){
+					array_remove(global.plr_strg, global.inhand);
+					var log_after_use = global.intfocus.log_after_use;
 				
-				global.inhand="";
+					text_engine(string("*Traci threw the {0} at {1}.*", global.inhand, global.intfocusid));
+					global.inhand="";
+				
+					if log_after_use!="null"{
+						event_create_new_log(log_after_use);
+					}
+				}
+				else {
+					text_engine("*Traci cannot use that here.*");
+					
+				}
 			}
-			else text_engine("*Traci is not holding anything in his hand.*");
+			else{
+				text_engine("*Traci is not holding anything in his hand.*");
+			}
 		break;
 		
 		case "tkedef":
 			text_engine(string("*Traci took the {0}*",global.intfocusid));
+		break;
+		
+		case "lron":
+			text_engine("hi. Im l ron hubbard. im a penis. don't throw those tomatoes at me.");
+		break;
+		
+		case "lrontmater":
+			text_engine("i told you not to do that. why would you disrespect me like this. you bastard. you must now pay a disrespect fee of $899.");
 		break;
 		
 		case "tracinoitems":
@@ -51,6 +68,7 @@ function text_defaults(){
 	line_break_num[page_ind]=0;
 	line_break_offset[page_ind]=0;
 	event[page_ind]="";
+	newlog="";
 	
 	
 	// vars for every letter
@@ -177,6 +195,14 @@ function options(_option,_opLinkId){
 // --------------- cutscene step after dialogue is finished ---------------------------
 
 // obsolete atm, but may end up using some of these (I coppied all of this from an old game.)
+
+/// @param       {string} log_id      The id of the dialogue event you would like to initiate.
+/// @description                      This function allows you to initiate a dialogue event within a dialogue event. This event will activate immediately after the current dialogue event.
+
+function event_create_new_log(log_id){
+	newlog = log_id;
+	event[page_ind-1]="newlog";
+}
 
 function event_step(steps=1){
 	step_rep[page_ind-1]=steps;

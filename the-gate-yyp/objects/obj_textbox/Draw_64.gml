@@ -141,6 +141,13 @@ if box_anim=="fin"{
 		// if page has printed all characters:
 		if drawChar==txt_length[page]{
 			// if this is the last page:
+			if event[page]!=""{
+				switch event[page]{
+					case "newlog":
+						create_text(newlog)
+					break;
+				}
+			}
 			if page==page_ind-1{
 				
 				// if player has selected an option:

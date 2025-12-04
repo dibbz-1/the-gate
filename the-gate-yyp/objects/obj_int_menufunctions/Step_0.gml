@@ -18,7 +18,8 @@ if position_meeting(mouse_x,mouse_y,id){
 			break;
 		
 			case 1:
-			spawn_observation_scene(event);
+			//spawn_observation_scene(event);
+			find_observation_scene(event);
 			break;
 		
 		}
