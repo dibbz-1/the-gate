@@ -1,0 +1,1 @@
+array_push(obj_game_manager.destroyed_instances,id);
