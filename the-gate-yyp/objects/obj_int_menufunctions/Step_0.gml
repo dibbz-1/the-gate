@@ -9,7 +9,13 @@ if position_meeting(mouse_x,mouse_y,id){
 	//if left mouse button is clicked
 	if select{
 		//create textbox with specified event text
-		if inst_id!=1 create_text(event);
+		if inst_id!=1 && global.intfocus.cutscene_id == "null" {
+			create_text(event);
+		}
+		// if there is a cutscene attatched to the event, load and play the video.
+		else if global.intfocus.cutscene_id != "null" {
+			load_video(global.intfocus.cutscene_id);
+		}
 		// if player selected take, destroy the taken object. if player selected look, spawn the observation scene.
 		switch inst_id{
 			case 3:

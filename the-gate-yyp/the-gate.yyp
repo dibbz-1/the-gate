@@ -21,6 +21,7 @@
   ],
   "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[
+    {"$GMIncludedFile":"","%Name":"traci-test.mp4","CopyToMask":-1,"filePath":"datafiles/cutscenes","name":"traci-test.mp4","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"spr_door.jfif","CopyToMask":-1,"filePath":"datafiles","name":"spr_door.jfif","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
   "isEcma":false,
@@ -55,6 +56,7 @@
     {"id":{"name":"obj_strg_manager","path":"objects/obj_strg_manager/obj_strg_manager.yy",},},
     {"id":{"name":"obj_textbox","path":"objects/obj_textbox/obj_textbox.yy",},},
     {"id":{"name":"obj_tmater","path":"objects/obj_tmater/obj_tmater.yy",},},
+    {"id":{"name":"obj_video_player","path":"objects/obj_video_player/obj_video_player.yy",},},
     {"id":{"name":"rm_test_alt","path":"rooms/rm_test_alt/rm_test_alt.yy",},},
     {"id":{"name":"rm_test","path":"rooms/rm_test/rm_test.yy",},},
     {"id":{"name":"scr_dialoguefunctions","path":"scripts/scr_dialoguefunctions/scr_dialoguefunctions.yy",},},

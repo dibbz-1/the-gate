@@ -156,3 +156,13 @@ function use_is_valid(){
 		return array_contains(interacts_with, global.inhand);
 	}
 }
+
+/// @param    {string} path       The location of the video file to be played.
+/// @ description                 This function will load and play a video file on top of the scene.
+
+function load_video(path){
+	instance_create_layer(0,0,"Cutscenes",obj_video_player,{
+		toplay : path
+	}
+	)
+}

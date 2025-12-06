@@ -37,6 +37,7 @@
     {"$GMObjectProperty":"v2","%Name":"take","filters":[],"listItems":[],"multiselect":false,"name":"take","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"null","varType":2,},
     {"$GMObjectProperty":"v2","%Name":"use","filters":[],"listItems":[],"multiselect":false,"name":"use","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"null","varType":2,},
     {"$GMObjectProperty":"v2","%Name":"item_id","filters":[],"listItems":[],"multiselect":false,"name":"item_id","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"null","varType":2,},
+    {"$GMObjectProperty":"v2","%Name":"cutscene_id","filters":[],"listItems":[],"multiselect":false,"name":"cutscene_id","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"null","varType":2,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
