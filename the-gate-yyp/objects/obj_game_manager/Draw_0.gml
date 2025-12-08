@@ -18,20 +18,24 @@ else{
 	}
 }
 
-if global.inhand!=""{
-	var _spr = spr_tmater
-	switch global.inhand{
-		case "Tmater":
-			_spr = spr_tmater;
-		break;
+if !instance_exists(obj_textbox){ 
+	// draw item in players hand
+	if global.inhand!=""{
+		var _spr = spr_tmater
+		switch global.inhand{
+			case "Tmater":
+				_spr = spr_tmater;
+			break;
 		
-		default:
-			_spr = spr_otherguy;
-		break;
+			default:
+				_spr = spr_otherguy;
+			break;
+		}
+		draw_sprite(_spr,0,mouse_x-5,mouse_y+5);
 	}
-	draw_sprite(_spr,0,mouse_x-5,mouse_y+5);
-}
 
-draw_sprite(cursor_spr,0,mouse_x,mouse_y);
+	// draw cursor
+	draw_sprite(cursor_spr,0,mouse_x,mouse_y);
+}
 
 //draw_text(obj_player.x,obj_player.y-20,global.inhand)
