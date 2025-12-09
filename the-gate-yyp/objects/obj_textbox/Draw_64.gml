@@ -11,7 +11,7 @@ var left = keyboard_check_pressed(ord("A"));
 var right = keyboard_check_pressed(ord("D"));
 
 //draw the text box
-draw_sprite_ext(box_spr,0,box_x,box_y,box_wR/box_spr_w,box_hR/box_spr_h,0,c_white,1);
+draw_sprite_ext(box_spr,box_sub_img,box_x,box_y,box_w/box_spr_w,box_h/box_spr_h,0,c_white,1);
 draw_set_font(fnt_proto);
 
 
@@ -119,20 +119,28 @@ if setup{
 //box open animation
 switch box_anim{
 	case "width":
-		box_wR+=box_w/box_anim_spd
-	
-		if box_wR>=box_w box_anim="height";
+		if box_sub_timer-- == 0 {
+			box_sub_timer = 5;
+			if box_sub_img++ == 10{
+				box_anim="fin";
+			}
+			
+		}
 	break;
-	case "height":
-		box_hR+=(box_h-50)/box_anim_spd
-		if box_hR>=box_h box_anim="fin";
-	break;
+
 	case "close":
-		box_hR-=box_h/box_anim_spd
-		if box_hR<=0 instance_destroy();
+		if box_sub_timer-- == 0 {
+			box_sub_timer = 5;
+			if box_sub_img-- == 0{
+				instance_destroy();
+			}
+			
+		}
 	break;
 		
 }
+
+
 
 // when textbox is open:
 if box_anim=="fin"{	

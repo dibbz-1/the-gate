@@ -50,8 +50,8 @@ box_spr=spr_textbox;                       // sets the sprite for the textbox (k
 box_spr_w=sprite_get_width(spr_textbox);   // finds the width of the box sprite (NOT the size of which to draw it)
 box_spr_h=sprite_get_height(spr_textbox);  // finds the height
 
-box_hR=50;                                 // the ACTUAL size that the box will be drawn each frame
-box_wR=0;                                  // etc.
+box_sub_img = 0;
+box_sub_timer = 5;
 
 box_w=900;                                 // the size that the box will be drawn
 box_h=300;
