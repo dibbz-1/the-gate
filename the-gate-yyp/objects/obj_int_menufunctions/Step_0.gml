@@ -14,7 +14,7 @@ if position_meeting(mouse_x,mouse_y,id){
 		}
 		// if there is a cutscene attatched to the event, load and play the video.
 		else if global.intfocus.cutscene_id != "null" {
-			load_video(global.intfocus.cutscene_id);
+			load_video(global.intfocus.cutscene_id,global.intfocus.talk=="NWS");
 		}
 		// if player selected take, destroy the taken object. if player selected look, spawn the observation scene.
 		switch inst_id{

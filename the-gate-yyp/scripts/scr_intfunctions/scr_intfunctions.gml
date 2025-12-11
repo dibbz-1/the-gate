@@ -158,11 +158,18 @@ function use_is_valid(){
 }
 
 /// @param    {string} path       The location of the video file to be played.
+/// @param    {boolean} interactive  Whether or not the cutscene has interactive elements. Defaults to false.
 /// @ description                 This function will load and play a video file on top of the scene.
 
-function load_video(path){
-	instance_create_layer(0,0,"Cutscenes",obj_video_player,{
-		toplay : path
+function load_video(path, interactive = false){
+	if global.intfocus.talk=="SCN"{
+		instance_create_layer(0,0,"Cutscenes",obj_video_player,{
+			toplay : path
+		}
+		)
+	} else if global.intfocus.talk=="NWS"{
+		instance_create_layer(0,0,"Cutscenes",obj_video_player_int,{
+			toplay : path
+		})
 	}
-	)
 }
