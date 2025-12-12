@@ -1,7 +1,7 @@
 //cursor manager
 var cursor_spr = spr_mouse
 
-if plrstate!=1{
+if plrstate==0{
 	if position_meeting(mouse_x,mouse_y,obj_col){
 		cursor_spr = spr_mouse_inv
 	}
@@ -14,6 +14,9 @@ if plrstate!=1{
 }
 else{
 	if position_meeting(mouse_x,mouse_y,obj_look_interactable){
+		cursor_spr = spr_mouse_int;
+	}
+	if position_meeting(mouse_x,mouse_y,obj_switchboard){
 		cursor_spr = spr_mouse_int;
 	}
 }

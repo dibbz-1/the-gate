@@ -4,35 +4,44 @@ var _video_stat = _video_dat[0];
 var _cam_x = camera_get_view_x(view_camera[0]);
 var _cam_y = camera_get_view_y(view_camera[0]);
 
-var _cam = mouse_check_button_pressed(mb_left);
-var _img = mouse_check_button_pressed(mb_right);
-var _snd = mouse_check_button_pressed(mb_middle);
+var _cam = cam;
+var _img = img;
+var _snd = snd;
 
-if timer != event_frame[next_event]*5{
-	timer++
-} else {
+
+
+if round(video_get_position()/(1000/12)) == event_frame[next_event]{
 	if video_get_status() != video_status_paused{
 		video_pause();
 	}
-	switch event[next_event]{
+	timer++;
+	if timer==fail{
+		timer=0;
+		drawbad=0.3;
+		next_event++;
+		misses++;
+		video_resume();
+	}
+	
+	if array_length(event)>next_event switch event[next_event]{
 		
 		case "cam":
 			if _cam{
-				timer++;
+				timer=0;
 				next_event++;
 				video_resume();
 			}
 		break;
 		case "img":
 			if _img{
-				timer++;
+				timer=0;
 				next_event++;
 				video_resume();
 			}
 		break;
 		case "snd":
 			if _snd{
-				timer++;
+				timer=0;
 				next_event++;
 				video_resume();
 			}
@@ -41,6 +50,8 @@ if timer != event_frame[next_event]*5{
 	}
 		
 }
+
+
 
 if _video_stat == 0 {
 	draw_surface(_video_dat[1], _cam_x,_cam_y);

@@ -3,7 +3,7 @@ var goto_trig = mouse_check_button_pressed(mb_left);
 
 // if mouse left button clicked, set walk setup to true and set variables to mouse coords
 if goto_trig{
-	if !walk_setup && !instance_exists(obj_textbox) && !position_meeting(mouse_x,mouse_y,obj_col) or position_meeting(mouse_x,mouse_y,obj_door) && obj_game_manager.plrstate==0 && !instance_exists(obj_video_player){
+	if !walk_setup && !instance_exists(obj_textbox) && (!position_meeting(mouse_x,mouse_y,obj_col) or position_meeting(mouse_x,mouse_y,obj_door)) && obj_game_manager.plrstate==0{
 		walk_setup=1;
 		
 		path = path_add();

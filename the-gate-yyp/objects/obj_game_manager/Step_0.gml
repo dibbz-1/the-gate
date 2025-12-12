@@ -14,9 +14,13 @@ if plrstate==1{
 	}
 }
 
+if video_get_status() != video_status_closed{
+	plrstate=2;
+}
+
 // save and load (testing, to be moved eventually. this will likely be an autosave.)
 
-if obj_player.walk_setup==0{
+if obj_player.walk_setup==0 && plrstate==0{
 	if keyboard_check_pressed(vk_enter){
 		file_save();
 		save_trig=true;

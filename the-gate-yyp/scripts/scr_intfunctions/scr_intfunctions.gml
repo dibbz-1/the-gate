@@ -171,5 +171,14 @@ function load_video(path, interactive = false){
 		instance_create_layer(0,0,"Cutscenes",obj_video_player_int,{
 			toplay : path
 		})
+		instance_create_layer(0,0,"Cutscene_int",obj_switchboard,{
+			sprite_index : spr_switch_cam
+		})
+		instance_create_layer(0,0,"Cutscene_int",obj_switchboard,{
+			sprite_index : spr_switch_img
+		})
+		instance_create_layer(0,0,"Cutscene_int",obj_switchboard,{
+			sprite_index : spr_switch_snd
+		})
 	}
 }

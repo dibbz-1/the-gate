@@ -14,6 +14,7 @@ plrstate=0;
 						PLAYER STATES
 			0 -- normal- able to walk around and interact with objects.
 			1 -- looking- currently observing a scene.
+			2 -- cutscene- watching a cutscene.
 */
 
 grid = mp_grid_create(0,0,room_width/16,room_height/16,16,16);
@@ -26,3 +27,5 @@ save_trig = false;
 load_trig = false;
 salpha = 0;
 lalpha = 0;
+
+quickfails=0;
