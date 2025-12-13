@@ -27,7 +27,7 @@ function text_id_is(_id){
 					array_remove(global.plr_strg, global.inhand);
 					var log_after_use = global.intfocus.log_after_use;
 				
-					text_engine(string("*Traci threw the {0} at {1}.*", global.inhand, global.intfocusid));
+					text_engine(string("*Traci threw the {0} at {1}.*", global.inhand, global.intfocusid),"G");
 					global.inhand="";
 				
 					if log_after_use!="null"{
@@ -35,17 +35,17 @@ function text_id_is(_id){
 					}
 				}
 				else {
-					text_engine("*Traci cannot use that here.*");
+					text_engine("*Traci cannot use that here.*","G");
 					
 				}
 			}
 			else{
-				text_engine("*Traci is not holding anything in his hand.*");
+				text_engine("*Traci is not holding anything in his hand.*","G");
 			}
 		break;
 		
 		case "tkedef":
-			text_engine(string("*Traci took the {0}*",global.intfocusid));
+			text_engine(string("*Traci took the {0}*",global.intfocusid),"G");
 		break;
 		
 		case "lron":
@@ -56,8 +56,16 @@ function text_id_is(_id){
 			text_engine("i told you not to do that. why would you disrespect me like this. you bastard. you must now pay a disrespect fee of $899.");
 		break;
 		
+		case "log_full_test00":
+			text_engine("Yo, you look like me.","player");
+			event_create_new_log("log_full_test01");
+		break;
+		case "log_full_test01":
+			text_engine("indeed I do.","intfocus")
+		break;
+		
 		case "tracinoitems":
-			text_engine("*Traci isn't holding any items*")
+			text_engine("*Traci isn't holding any items*","G")
 		break;
 	}
 }
@@ -114,7 +122,7 @@ function text_engine(_text,_char="none",_emote="neutral",_spd=1){
 	lfs=0;
 	
 	text[page_ind]=_text;
-	charPort[page_ind]=_char;
+	charPort=_char;
 	emote[page_ind]=_emote;
 	txtSpd[page_ind]=_spd;
 	

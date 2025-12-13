@@ -44,40 +44,40 @@ char=[0,0];           // tracks the character of the page that is being initiali
 char_x=[0,0];         // the x of the character on the page
 char_y=[0,0];         // the y of the character on the page
 
-
-//vars for drawing the text box
-box_spr=spr_textbox;                       // sets the sprite for the textbox (kinda redundant but whatever)
-box_spr_w=sprite_get_width(spr_textbox);   // finds the width of the box sprite (NOT the size of which to draw it)
-box_spr_h=sprite_get_height(spr_textbox);  // finds the height
-
-box_sub_img = 0;
-box_sub_timer = 5;
-
-box_w=900;                                 // the size that the box will be drawn
-box_h=300;
-
-box_x=50;                                  // the position the box will be drawn
-box_y=450;
-
-border=60;                                 // the padding around the text
-
-box_anim="width";                          // the state of the textbox opening animation
-box_anim_spd=8;                            // the speed of the opening animation
-
-line_width=box_w-border*2.3;                 // the width of each line before a break
-
 //vars for drawing character portrait
 
 charSub=0;          // the sprites sub-image
 charTimer=0;        // one this reaches zero it changes the sub-image
 charTimerSwitch=4;  // how many frames to wait before changing subimg
-charPort[0]="none"; // the character speaking
+charPort="none"; // the character speaking
 emote[0]="neutral"; // the characters emotion
 
 voiceSwitch=0;      // plays character voice upon countdown
 voiceFramePause=7;  // how many frames between each voice
 
 logtype="def";      // obsolete
+
+
+//vars for drawing the text box
+box_spr=spr_textbox;                       // sets the sprite for the textbox (kinda redundant but whatever)
+box_spr_w=sprite_get_width(spr_textbox);   // finds the width of the box sprite (NOT the size of which to draw it)
+box_spr_h=sprite_get_height(spr_textbox);  // finds the height
+
+
+// set position and appearance of the textbox.
+box_w=0;
+box_h=0
+box_x=0;
+box_y=0;
+border=0;
+line_width=0;
+onscrn=1;
+
+
+box_anim="width";                          // the state of the textbox opening animation
+box_anim_spd=3;                            // the speed of the opening animation
+box_sub_img = 0;
+box_sub_timer = box_anim_spd;
 
 //vars for init
 setup=true;                       // if text needs to be set up

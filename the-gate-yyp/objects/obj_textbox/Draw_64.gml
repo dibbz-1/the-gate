@@ -10,13 +10,50 @@ var left = keyboard_check_pressed(ord("A"));
 // right
 var right = keyboard_check_pressed(ord("D"));
 
-//draw the text box
-draw_sprite_ext(box_spr,box_sub_img,box_x,box_y,box_w/box_spr_w,box_h/box_spr_h,0,c_white,1);
-draw_set_font(fnt_proto);
+if charPort=="G" draw_set_font(fnt_proto);
+else draw_set_font(fnt_proto_med);
 
 
 if setup{
 	// this setup runs once per dialogue event.
+	
+	if charPort!= "G"{
+		var intfocus = global.intfocus;
+		
+		if charPort=="player" intfocus=obj_player
+	
+		var _cam_x = camera_get_view_x(view_camera[0]);
+		var _cam_y = camera_get_view_y(view_camera[0]);
+	
+		//find the instances position relative to its position on the gui.
+		var _inst_rel_x = (intfocus.x-_cam_x)*3.125;
+		var _inst_rel_y = (intfocus.y-_cam_y)*3.125;
+	
+		box_x=_inst_rel_x-intfocus.sprite_width/2.5;
+		box_y=_inst_rel_y-intfocus.sprite_height/1.5;
+	
+		box_w=400;
+		box_h=200;
+	
+		border=50;
+	
+		onscrn=1;
+	
+		if (box_x-box_w) < (_cam_x*3.125){
+			onscrn=-1
+			box_x+=intfocus.sprite_width*1.3
+		}
+	} else{
+		box_w=900;                                 // the size that the box will be drawn
+		box_h=300;
+
+		box_x=940;                                  // the position the box will be drawn
+		box_y=720;
+
+		border=120;                                 // the padding around the text
+	}
+
+	line_width=box_w-border*2.3;                 // the width of each line before a break
 	
 	drawChar=0;
 	txtSpdR=txtSpd[page]
@@ -69,9 +106,12 @@ if setup{
 			
 			var char_pos=c+1 // same as before
 			
-			//starting point of the text 
-			var txt_x=box_x+border;
-			var txt_y=box_y+border;
+			//starting point of the text
+			var txt_x=box_x+border+20;
+			var txt_y=box_y+border/1.3-box_h;
+			if onscrn==1{
+				txt_x-=box_w+20;
+			}
 			
 			// calculates how many characters are before the "c"nth character of the page.
 			var txt_before_char=string_copy(text[p],1,char_pos);
@@ -92,7 +132,7 @@ if setup{
 				}
 			}
 			
-			// set the characters position
+			// store the characters position
 			char_x[c,p]=txt_x+current_txt_width;
 			char_y[c,p]=txt_y+txt_line*sep
 		}
@@ -108,7 +148,7 @@ if setup{
 	show_debug_message("text box init finished! Showing results-----");
 	// print each page in the output console
 	for (var pg=0;pg<page_ind;pg++){
-		show_debug_message("{1}: {0}",text[pg],charPort[pg]);
+		show_debug_message("{1}: {0}",text[pg],charPort);
 	}
 
 		
@@ -120,7 +160,7 @@ if setup{
 switch box_anim{
 	case "width":
 		if box_sub_timer-- == 0 {
-			box_sub_timer = 5;
+			box_sub_timer = box_anim_spd;
 			if box_sub_img++ == 10{
 				box_anim="fin";
 			}
@@ -130,7 +170,7 @@ switch box_anim{
 
 	case "close":
 		if box_sub_timer-- == 0 {
-			box_sub_timer = 5;
+			box_sub_timer = box_anim_spd;
 			if box_sub_img-- == 0{
 				instance_destroy();
 			}
@@ -275,25 +315,6 @@ if box_anim=="fin"{
 		}
 	}
 	
-	
-	
-	var charSprite=noone;
-	//portraits
-	switch charPort[page]{
-		case "dale":
-			switch emote[page]{
-				case "neutral":
-					charSprite=spr_dale_neutral;
-				break;
-			}
-		break;
-		
-		default:
-			//nothing
-		break;
-	}
-	if charSprite!=noone draw_sprite_ext(charSprite,charSub,box_x+box_w,box_y,3,3,0,c_white,1);
-	
 	// options
 	if drawChar==txt_length[page] && page==page_ind-1{
 		//arrow anim
@@ -330,6 +351,9 @@ if box_anim=="fin"{
 			draw_text(box_x+100+300*(op-1),box_y+130,option[op])
 		}
 	}
+	
+	//draw textbox
+	draw_sprite_ext(box_spr,box_sub_img,box_x,box_y,(box_w/box_spr_w)*onscrn,box_h/box_spr_h,0,c_white,1);
 	
 	// draw text
 	for (var c=0; c<drawChar; c++){

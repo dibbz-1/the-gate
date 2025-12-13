@@ -22,6 +22,7 @@
   "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"news-test.mp4","CopyToMask":-1,"filePath":"datafiles/cutscenes/news","name":"news-test.mp4","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"news-test.mp4","CopyToMask":-1,"filePath":"datafiles/cutscenes/News","name":"news-test.mp4","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"news-test.mp4","CopyToMask":-1,"filePath":"datafiles/Cutscenes/News","name":"news-test.mp4","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"traci-test.mp4","CopyToMask":-1,"filePath":"datafiles/cutscenes","name":"traci-test.mp4","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"traci-test.mp4","CopyToMask":-1,"filePath":"datafiles/Cutscenes","name":"traci-test.mp4","resourceType":"GMIncludedFile","resourceVersion":"2.0",},

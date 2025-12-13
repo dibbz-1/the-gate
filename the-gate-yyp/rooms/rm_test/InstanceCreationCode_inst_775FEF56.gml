@@ -1,0 +1,1 @@
+sprite_index=spr_traci_idle_d;

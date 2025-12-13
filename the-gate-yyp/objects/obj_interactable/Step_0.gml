@@ -9,12 +9,10 @@ if position_meeting(mouse_x,mouse_y,id){
 	if act{
 		//if the interaction menu is not open, no textbox exists, and the player is a certain distance from this instance, set the global interaction focus to the id of the instance and spawn menu.
 		if obj_game_manager.plrstate!=1{
-			if !instance_exists(obj_int_menufunctions) && !instance_exists(obj_textbox) && distance_to_object(obj_player)<30{
-				global.intfocus=id;
-				// if the instance has an item id, set the interactive focus id to that.
-				if item_id!="null" global.intfocusid=item_id;
-				draw_interact_menu();
+			if !instance_exists(obj_int_menufunctions) && !instance_exists(obj_textbox){
+				setup_int();
 			}
 		}
 	}
 }
+

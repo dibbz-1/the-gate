@@ -18,6 +18,22 @@ if goto_trig{
 	}
 }
 
+if walk_auto!=noone{
+	if !walk_setup && !instance_exists(obj_textbox) && (!position_meeting(mouse_x,mouse_y,obj_col) or position_meeting(mouse_x,mouse_y,obj_door)) && obj_game_manager.plrstate==0{
+		walk_setup=1;
+		
+		path = path_add();
+		if mp_grid_path(obj_game_manager.grid,path,x,y,walk_auto.x,walk_auto.y,true){
+			path_set_kind(path,1);
+			
+			path_start(path,walk_spd,path_action_stop,true);
+		}
+		else{
+			walk_setup=0;
+		}
+	}
+}
+
 
 
 //if walk setup is true, move towards point.
