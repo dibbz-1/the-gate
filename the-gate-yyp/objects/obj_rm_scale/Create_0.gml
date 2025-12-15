@@ -1,0 +1,1 @@
+// This objext will define the size of the objects in the room, as if a camera is further away or closer to the scene.
